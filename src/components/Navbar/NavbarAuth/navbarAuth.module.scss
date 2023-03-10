@@ -1,0 +1,22 @@
+.link {
+    display: inline-block;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #000;
+    border: 2px solid grey;
+    padding: 5px;
+    border-radius: 8px;
+
+    &:global(.active) {
+        font-weight: bold;
+        border-color: rgb(33, 92, 182);
+        background-color:rgb(33, 92, 182);
+        color:azure;
+    }
+}
+.container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+}

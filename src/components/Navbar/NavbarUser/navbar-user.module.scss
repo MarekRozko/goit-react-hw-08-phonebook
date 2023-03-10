@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 80px;
+    margin-top: 20px;
+    align-items: baseline;
+}
+.btn{
+    margin-left: 15px;
+    padding: 5px;
+    font-size: 20;
+    border-radius: 8px;
+    border: 1px solid;
+    cursor: pointer;
+    background-color: rgb(204, 234, 224);
+    border-color: transparent;
+    font-weight: 700;
+
+    &:hover{
+        background-color: red;
+        color:white;
+        font-weight: bold;
+    }
+}

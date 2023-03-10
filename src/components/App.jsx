@@ -1,16 +1,24 @@
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import Navbar from './Navbar/Navbar';
+import UserRoutes from './UseRoutes';
+import { store } from './redux/store';
+
+
+
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbar />
+          <UserRoutes />
+        </BrowserRouter>
+      </Provider>
+
   );
-};
+}
+
+
+
+
