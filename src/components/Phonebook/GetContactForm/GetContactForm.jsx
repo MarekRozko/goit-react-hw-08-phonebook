@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import inititalState from '../GetContactForm/initialState';
+import inititalState from './initialState';
 import styles from  "../GetContactForm/getContactForm.module.scss";
 
 const GetContactForm = ({ onSubmit }) => {

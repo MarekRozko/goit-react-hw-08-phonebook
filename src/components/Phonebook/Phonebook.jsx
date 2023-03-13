@@ -1,14 +1,15 @@
 
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import GetContactForm from "../GetContactForm/GetContactForm";
-import ContactList from "../ContactList/ContactList";
-import FilterContact from "../FilterContact/FilterContact";
+import GetContactForm from "./GetContactForm/GetContactForm";
+import ContactList from "./ContactList/ContactList";
+import FilterContact from "./FilterContact/FilterContact";
 import 'react-toastify/dist/ReactToastify.css';
+import { fetchAllContact, fetchAddContact, fetchDeleteContact } from "../redux/contacts/contact-operations";
 import { setFilter } from "../redux/filter/filter-slice";
 import { getFilteredContacts } from "../redux/contacts/contact-selector";
 import { getFilter } from "../redux/filter/filter-selector";
-import styles from "components/app.module.css";
+import styles from "../app.module.scss";
 import { ToastContainer} from 'react-toastify';
 const Phonebook = () => {
 
@@ -22,14 +23,14 @@ const Phonebook = () => {
 
 
 
-    // const HandleAddContact = ({ name, phone }) => {
+    const HandleAddContact = ({ name, phone }) => {
 
-    //     dispatch(fetchAddContact({ name, phone }));
-    // }
+        dispatch(fetchAddContact({ name, phone }));
+    }
 
-    // const handleDeleteContact = (id) => {
-    //     dispatch(fetchDeleteContact(id));
-    // }
+    const handleDeleteContact = (id) => {
+        dispatch(fetchDeleteContact(id));
+    }
     const handleFilter = ({ target }) => {
         dispatch(setFilter(target.value))
     }
