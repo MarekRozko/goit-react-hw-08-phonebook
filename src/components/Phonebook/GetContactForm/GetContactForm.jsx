@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import inititalState from './initialState';
+import initialState from './initialState';
 import styles from  "../GetContactForm/getContactForm.module.scss";
 
 const GetContactForm = ({ onSubmit }) => {
-  const [state, setState] = useState({ ...inititalState })
+  const [state, setState] = useState({...initialState})
   
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -16,7 +16,7 @@ const GetContactForm = ({ onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
     onSubmit({ ...state});
-    setState({ ...inititalState });
+    setState({ ...initialState });
   }
 
 
@@ -55,4 +55,5 @@ const GetContactForm = ({ onSubmit }) => {
 
 
 export default GetContactForm;
+
 

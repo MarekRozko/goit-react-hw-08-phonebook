@@ -49,10 +49,10 @@ const authSlice = createSlice({
             state.error = null;
         })
         .addCase(current.fulfilled, (state, {payload}) => {
-            const {user, token} = payload;
+            const { name, email } = payload;
             state.loading = false;
-            state.user = user;
-            state.token = token;
+            state.user.name = name;
+            state.user.email = email;
             state.isLogin = true;
         })
         .addCase(current.rejected, (state, {payload}) => {
@@ -77,4 +77,4 @@ const authSlice = createSlice({
     }
 })
 
-export const authReducer = authSlice.reducer;
+export default authSlice.reducer;

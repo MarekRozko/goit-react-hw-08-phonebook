@@ -6,4 +6,4 @@ export const getAuth = ({ auth }) => {
 };
 
 export const getUser = ({ auth }) => auth.user;
-export const selectLoading = ({ auth }) => auth.loading;
+export const isLoading = ({ auth }) => auth.loading;

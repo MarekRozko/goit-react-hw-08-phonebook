@@ -4,17 +4,16 @@ import { toast } from 'react-toastify';
 
 
 export const fetchAllContact = createAsyncThunk(
-    "contacts/fetchAll",
-    async(_, rejectWithValue) => {
-        try {
-            const data = await api.getAllContact();
-            return data;
-        }
-        catch({response}) {
-            return rejectWithValue(response.data);
-        }
+  'contacts/fetchAll',
+  async (_, { rejectWithValue }) => {
+    try {
+      const contacts = await api.getAllContacts();
+      return contacts;
+    } catch ({ response }) {
+      return rejectWithValue(response.data.message);
     }
-)
+  }
+);
 
 export const fetchAddContact = createAsyncThunk(
     "contacts/addContact",
@@ -24,7 +23,7 @@ export const fetchAddContact = createAsyncThunk(
             return result;
         }
         catch({response}) {
-            return rejectWithValue(response.data);
+            return rejectWithValue(response.data.message);
         }
     },
     {
@@ -54,14 +53,13 @@ export const fetchAddContact = createAsyncThunk(
 )
 
 export const fetchDeleteContact = createAsyncThunk(
-    "contacts/deleteContact",
-    async(id, {thunkAPI}) => {
-        try {
-            await api.deleteContact(id);
-            return id;
-        }
-        catch({response}) {
-            return thunkAPI.rejectWithValue(response.data);
-        }
+  'contacts/deleteContact',
+  async (id, { rejectWithValue }) => {
+    try {
+      await api.deleteContact(id);
+      return id;
+    } catch ({ response }) {
+      return rejectWithValue(response.data.message);
     }
-)
+  }
+);
