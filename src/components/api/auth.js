@@ -20,7 +20,7 @@ export const login = async (data) => {
     return result;
 }
 
-export const getCurrent = async (token) => {
+export const current = async (token) => {
   try {
     setToken(token);
     const response = await instance.get("/users/current");

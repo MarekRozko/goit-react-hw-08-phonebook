@@ -2,7 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "components/redux/Auth/auth-operations";
 import styles from "./navbar-user.module.scss";
 import { getUser } from "components/redux/Auth/auth-selectors";
-const NavbarUser = () => {
+
+export const UserMenu = () => {
   const {email} = useSelector(getUser);
   const dispatch = useDispatch();
 
@@ -21,4 +22,3 @@ const NavbarUser = () => {
 };
 
 
-export default NavbarUser;
