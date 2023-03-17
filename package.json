@@ -4,6 +4,9 @@
   "private": true,
   "homepage": "https://MarekRozko.github.io/goit-react-hw-08-phonebook/",
   "dependencies": {
+    "@emotion/css": "^11.10.6",
+    "@emotion/react": "^11.10.6",
+    "@rebass/forms": "^4.0.6",
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
@@ -15,7 +18,9 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
+    "react-spinners": "^0.13.8",
     "react-toastify": "^9.1.1",
+    "rebass": "^4.0.7",
     "redux-persist": "^6.0.0",
     "sass": "^1.58.3",
     "web-vitals": "^2.1.3"

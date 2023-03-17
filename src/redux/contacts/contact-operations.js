@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import * as api from "../../api/contacts";
+import * as api from "../../services/api/contacts";
 import { toast } from 'react-toastify';
 
 
@@ -7,7 +7,7 @@ export const fetchAllContact = createAsyncThunk(
   'contacts/fetchAll',
   async (_, { rejectWithValue }) => {
     try {
-      const contacts = await api.getAllContacts();
+      const contacts = await api.getAllContact();
       return contacts;
     } catch ({ response }) {
       return rejectWithValue(response.data.message);
@@ -27,11 +27,11 @@ export const fetchAddContact = createAsyncThunk(
         }
     },
     {
-        condition: ({name, phone}, {getState}) => {
+        condition: ({name, number}, {getState}) => {
             const {contacts} = getState();
            
         const normalizedName = name.toLowerCase()?.trim();
-        const normalizedNumber = phone.toString()?.trim();
+        const normalizedNumber = number.toString()?.trim();
         const result = contacts.items.find(({ name, number}) => {
             return (name.toLowerCase() === normalizedName || number === normalizedNumber);
         })
@@ -63,3 +63,4 @@ export const fetchDeleteContact = createAsyncThunk(
     }
   }
 );
+

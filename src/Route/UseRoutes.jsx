@@ -1,14 +1,15 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes, Outlet } from 'react-router-dom';
-import PrivateRoute from './PrivateRoute/PrivateRoute';
-import PublicRoute from './PublicRoute/PublicRoute';
-const RegisterPage = lazy(() => import("./pages/RegisterPage/RegisterPage"));
-const LoginPage = lazy(() => import("../components/pages/LoginPage/LoginPage"));
-const Phonebook = lazy(() => import("../components/Phonebook/Phonebook"));
-const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+import PrivateRoute from '../components/PrivateRoute/PrivateRoute';
+import PublicRoute from '../components/PublicRoute/PublicRoute';
+import { Loader } from '../components/Loader/Loader';
+const RegisterPage = lazy(() => import("../page/RegisterPage/RegisterPage"));
+const LoginPage = lazy(() => import("../page/LoginPage/LoginPage"));
+const ContactsPage = lazy(() => import("../page/ContactsPage/ContactsPage"));
+const HomePage = lazy(() => import("../page/HomePage/HomePage"));
 const UserRoutes = () => {
     return (
-        <Suspense fallback={<p>...loading</p>}>
+        <Suspense fallback={<Loader/>}>
             <Routes>
                 <Route index element={<HomePage />} />
                 <Route element={<PublicRoute/>}>
@@ -16,7 +17,7 @@ const UserRoutes = () => {
                     <Route path="/login" element={<LoginPage />} />
                 </Route>
                 <Route element={<PrivateRoute/>}>
-                    <Route path="/contacts" element={<Phonebook />} />
+                    <Route path="/contacts" element={<ContactsPage />} />
                 </Route>
             </Routes>
              <Outlet />

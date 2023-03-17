@@ -20,13 +20,13 @@ const GetContactForm = ({ onSubmit }) => {
   }
 
 
-  const { name, phone } = state;
+  const { name, number } = state;
 
   return (
-      <form  onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit} className={styles.wrapper}>
         <label className={styles.labelForm}>
           Name{' '}
-          <input className={styles.imputForm}
+          <input className={styles.field}
             type="text"
             name="name"
             value={name}
@@ -38,10 +38,10 @@ const GetContactForm = ({ onSubmit }) => {
         </label>
         <label className={styles.labelFormTel}>
           Phone{' '}
-          <input className={styles.imputFormTel}
+          <input className={styles.field}
             type="tel"
-            name="phone"
-            value={phone}
+            name="number"
+            value={number}
             onChange={handleChange}
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"

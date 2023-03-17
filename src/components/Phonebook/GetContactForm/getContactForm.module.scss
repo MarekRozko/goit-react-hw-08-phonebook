@@ -1,13 +1,7 @@
-.labelForm {
-    display: flex;
-    margin-left: 45px;
-    margin-bottom: 20px;
-    font-size: 18px;
-    font-weight: 500;
-}
+
 
 .imputForm {
-    margin-left: 10px;
+    margin-left: 30px;
     padding: 3px;
     box-shadow: 3px 3px 5px grey;
     font-size: 14px;
@@ -16,30 +10,40 @@
     border: solid 1px grey;
 }
 
-.labelFormTel {
-    margin-left: 45px;
-    font-size: 18px;
-    font-weight: 500;
-}
 
-.imputFormTel {
-    margin-left: 3px;
-    padding: 3px;
-    box-shadow: 3px 3px 5px grey;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 4px;
-    border: solid 1px grey;
-}
+
+
 
 .buttonAdd {
-    margin-left: 15px;
-    font-size: 16px;
+    display: flex;
+    margin-left: 20px;
+    padding: 8px;
     background-color: rgb(31, 237, 31);
     color: white;
     border-radius: 4px;
     border-color: rgb(31, 237, 31);
-    box-shadow: 3px 3px 5px grey;
     cursor: pointer;
     text-shadow: 3px 3px 5px grey;
+    font-weight: bold;
+    &:hover{
+        color: white;
+        font-weight: bold;
+    }
+}
+
+.wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+}
+
+.field {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.labelForm{
+    margin-right: 30px;
 }

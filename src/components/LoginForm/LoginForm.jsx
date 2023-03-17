@@ -1,6 +1,6 @@
 import TextField from "components/TextField/TextField";
 import Button from "components/Button/Button";
-import useForm from "components/hooks/useForm";
+import useForm from "hooks/useForm";
 import fields from "./fields";
 import initialState from "./initialState";
 import styles from "./loginForm.module.scss"
